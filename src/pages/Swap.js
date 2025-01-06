@@ -12,7 +12,7 @@ const Swap = () => {
     {
       name: 'Black Tuxedo',
       description: 'Perfect for formal events.',
-      image: '/images/black-tuxedo.jpg',
+      image: '/images/black-tuxedo.webp',
     },
   ]);
 
