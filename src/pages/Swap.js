@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 const Swap = () => {
-  // Initial state with two items for display
   const [items, setItems] = useState([
     {
       title: 'Red Party Dress',
@@ -31,16 +30,16 @@ const Swap = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setItems([...items, formData]); // Add the new item to the items list
+    setItems([...items, formData]); // Add the new item to the list
     setFormData({ title: '', description: '', image: '' }); // Reset form fields
   };
 
   return (
     <div className="swap">
-      <h2>Swap Your Clothes</h2>
+      <h2 className="swap-title">Swap Your Clothes</h2>
 
       <div className="swap-form">
-        <h3>Add an item for swapping</h3>
+        <h3 className="form-title">Add an Item for Swapping</h3>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
@@ -65,7 +64,7 @@ const Swap = () => {
             onChange={handleChange}
             required
           />
-          <button type="submit">Add Item</button>
+          <button type="submit" className="form-button">Add Item</button>
         </form>
       </div>
 
@@ -79,7 +78,7 @@ const Swap = () => {
             </div>
           ))
         ) : (
-          <p>No items available for swapping.</p>
+          <p className="no-items">No items available for swapping.</p>
         )}
       </div>
     </div>
