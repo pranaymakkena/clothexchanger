@@ -1,43 +1,40 @@
 import React, { useState } from 'react';
 
 const SwapForm = ({ addItem }) => {
-  const [formData, setFormData] = useState({ name: '', description: '', image: '' });
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
+  const [image, setImage] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addItem(formData);
-    setFormData({ name: '', description: '', image: '' });
+    if (name && description && image) {
+      addItem({ name, description, image });
+      setName('');
+      setDescription('');
+      setImage('');
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="swap-form">
       <input
         type="text"
-        name="name"
-        placeholder="Cloth Name"
-        value={formData.name}
-        onChange={handleChange}
-        required
+        placeholder="Item Name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
       />
       <textarea
-        name="description"
         placeholder="Description"
-        value={formData.description}
-        onChange={handleChange}
-        required
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
       />
       <input
         type="text"
-        name="image"
         placeholder="Image URL"
-        value={formData.image}
-        onChange={handleChange}
+        value={image}
+        onChange={(e) => setImage(e.target.value)}
       />
-      <button type="submit">Add Cloth</button>
+      <button type="submit">Add Item</button>
     </form>
   );
 };
