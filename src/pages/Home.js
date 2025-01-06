@@ -1,12 +1,14 @@
 import React from 'react';
 
-const Home = () => {
+function Home() {
   return (
     <div className="home">
-      <h1>Welcome to Cloth Exchanger</h1>
-      <p>Swap your party wear with others for free!</p>
+      <h1 className="home-title">Welcome to the Cloth Exchanger Platform!</h1>
+      <p className="home-description">
+        Swap your party wear for free! Browse through a wide selection of outfits and find something perfect for your next event.
+      </p>
     </div>
   );
-};
+}
 
 export default Home;
