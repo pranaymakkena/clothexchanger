@@ -15,26 +15,21 @@ body {
 }
 
 /* Navbar Styles */
-nav {
-  background-color: #4a90e2;
-  padding: 15px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.navbar {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 100;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #4a90e2;
+  padding: 15px 0;
 }
 
 nav ul {
   list-style: none;
   display: flex;
+  justify-content: center;
   gap: 30px;
-}
-
-nav ul li {
-  font-size: 18px;
 }
 
 nav ul li a {
@@ -50,22 +45,29 @@ nav ul li a:hover {
 }
 
 /* Footer Styles */
-footer {
+.footer {
+  text-align: center;
   background-color: #4a90e2;
   color: white;
-  text-align: center;
-  padding: 20px;
-  position: relative;
+  padding: 20px 0;
+  position: fixed;
   bottom: 0;
   width: 100%;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Main Content Container */
+/* Swap Page Styles */
 .swap {
-  padding: 80px 20px 40px;
+  padding: 120px 20px 60px; /* Ensure top and bottom spacing */
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
+}
+
+.swap h2 {
+  font-size: 2.5rem;
+  color: #4a90e2;
+  margin-bottom: 20px;
 }
 
 /* Form Styles */
@@ -74,8 +76,7 @@ footer {
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  margin-bottom: 30px;
-  width: 100%;
+  margin-bottom: 40px;
   max-width: 600px;
   margin: 20px auto;
 }
@@ -99,12 +100,6 @@ footer {
   transition: all 0.3s ease;
 }
 
-.swap-form input:focus,
-.swap-form textarea:focus {
-  border-color: #4a90e2;
-  box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
-}
-
 .swap-form button {
   background: linear-gradient(to right, #4a90e2, #50c878);
   color: #fff;
@@ -126,6 +121,7 @@ footer {
   gap: 20px;
   justify-content: center;
   margin-top: 40px;
+  padding-bottom: 60px; /* Ensures gap between last card and footer */
 }
 
 .item-card {
@@ -161,16 +157,28 @@ footer {
   line-height: 1.5;
 }
 
-/* Center content in body */
-.center-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  min-height: 100vh;
+/* Home and About Page Styles */
+.home, .about {
+  text-align: center;
+  padding: 120px 20px; /* Adjust padding for top and bottom */
+  margin: 0 auto;
+  max-width: 800px; /* Ensures content doesn't stretch too wide */
 }
 
-/* Adjusting spacing for mobile */
+.home-title, .about-title {
+  font-size: 2.5rem;
+  color: #4a90e2;
+  margin-bottom: 20px;
+}
+
+.home-description, .about-description {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Responsive Adjustments */
 @media (max-width: 768px) {
   .item-list {
     flex-direction: column;
