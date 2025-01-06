@@ -1,10 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/App';  // Main App component
+import ReactDOM from 'react-dom/client';
+import App from './App';
 
-ReactDOM.render(
+// Load styles from public folder
+const link = document.createElement('link');
+link.rel = 'stylesheet';
+link.href = '/style.css';
+document.head.appendChild(link);
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
