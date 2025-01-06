@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './style.css'; // Import the style.css file
 
 const Swap = () => {
   // Initial state with two items for display
